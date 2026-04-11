@@ -7,4 +7,10 @@ addBtn.addEventListener("click", function()
     {
         const taskText = taskInput.value;
         console.log(taskText);
+        const li = document.createElement("li");
+        li.textContent = taskText;
+        taskList.appendChild(li);
     });
+     
+    
+    
