@@ -4,11 +4,20 @@
 }
 
 li {
-    margin-bottom: 8px
+    margin-bottom: 8px;
+    list-style-type: none;
+    padding:10px;
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    display: flex;
+}
+
+ul {
+    padding: 0;
 }
 
 li button {
-    margin-left: 10px;
+    margin-left: auto;
 }
 
 input {
@@ -18,3 +27,34 @@ input {
 button {
     padding: 8px 12px;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #f5f7fb;
+}
+
+.input-area{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-area input{
+    flex: 1;
+}
+
+.app-container{
+    background-color: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(22, 171, 5, 0.1);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+

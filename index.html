@@ -10,16 +10,20 @@
 
 <!-- Body section: Contains all visible content -->
 <body>
-    <!-- Main heading -->
-    <h1>My To-Do List</h1>
+    <div class="app-container">
+        <!-- Main heading -->
+        <h1>My To-Do List</h1>
 
-    <!-- Input field where users type their tasks -->
-    <input type="text" id="taskInput" placeholder="Enter a task">
-    <!-- Button to add the task to the list -->
-    <button id="addBtn">Add</button>
-    <!-- Unordered list that displays all tasks -->
-    <ul id="taskList"></ul>
-
+        <div class="input-area">
+            <!-- Input field where users type their tasks -->
+            <input type="text" id="taskInput" placeholder="Enter a task">
+            <!-- Button to add the task to the list -->
+            <button id="addBtn">Add</button>
+        </div>
+        
+        <!-- Unordered list that displays all tasks -->
+        <ul id="taskList"></ul>
+    </div>
     <!-- Link to external JavaScript file for functionality -->
     <script src="script.js"></script>
 </body>
