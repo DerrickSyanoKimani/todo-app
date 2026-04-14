@@ -37,6 +37,7 @@ button {
     border-radius: 6px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 body {
@@ -72,6 +73,14 @@ h1 {
     background-color: #6c63ff;
     color: white;
     font-weight: bold;
+}
+
+li button:hover {
+    background-color: #ffcccc;
+}
+
+.add-button:hover {
+    background-color: #5a52e0;
 }
 
 
