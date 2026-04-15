@@ -3,11 +3,11 @@ const addBtn = document.getElementById('addBtn');
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
-// Tasks stored in memory and synced to localStorage
+// Tasks stored in memory and persisted to localStorage for persistence across reloads
 let tasks = [];
 
 function createTask(taskText) {
-    // Create a task list item with click-to-complete and delete controls
+    // Create a task list item, with click-to-complete and delete controls
     const li = document.createElement('li');
     li.textContent = taskText;
 
@@ -38,7 +38,7 @@ function createTask(taskText) {
 addBtn.addEventListener('click', function() {
     const taskText = taskInput.value.trim();
 
-    // Do nothing if the input is empty or only whitespace
+    // Ignore empty input or whitespace-only values
     if (taskText === '') {
         return;
     }
@@ -48,19 +48,19 @@ addBtn.addEventListener('click', function() {
     console.log(tasks);
     createTask(taskText);
 
-    // Clear and focus the input for the next task
+    // Reset the input for the next task
     taskInput.value = '';
     taskInput.focus();
 });
 
-// Allow submitting a new task by pressing Enter inside the input
+// Submit new task by pressing Enter in the input field
 taskInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         addBtn.click();
     }
 });
 
-// Load previously saved tasks from localStorage
+// Load saved tasks from localStorage on page load
 const savedTasks = localStorage.getItem('tasks');
 
 if (savedTasks) {

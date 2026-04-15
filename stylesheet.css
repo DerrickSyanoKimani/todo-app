@@ -1,12 +1,14 @@
+/* Completed task styling */
 .completed {
     text-decoration: line-through;
     color: rgb(2, 97, 2);
 }
 
+/* Task list item styling */
 li {
     margin-bottom: 8px;
     list-style-type: none;
-    padding:12px 14px;
+    padding: 12px 14px;
     border: 1px solid lightgrey;
     border-radius: 8px;
     display: flex;
@@ -15,10 +17,12 @@ li {
     box-shadow: 0 2px 4px rgba(26, 26, 26, 0.1);
 }
 
+/* Remove default list padding for the task list */
 ul {
     padding: 0;
 }
 
+/* Delete button inside each task item */
 li button {
     margin-left: auto;
     background-color: #ffe5e5;
@@ -27,6 +31,7 @@ li button {
     cursor: pointer;
 }
 
+/* Input field styling */
 input {
     padding: 8px;
     border: 1px solid lightgrey;
@@ -34,6 +39,7 @@ input {
     box-shadow: 0 2px 4px rgba(22, 171, 5, 0.1);
 }
 
+/* General button styling */
 button {
     padding: 8px 12px;
     border-radius: 6px;
@@ -42,6 +48,7 @@ button {
     transition: background-color 0.2s ease;
 }
 
+/* Page background and layout */
 body {
     font-family: Arial, sans-serif;
     max-width: 500px;
@@ -49,38 +56,45 @@ body {
     background-color: #f5f7fb;
 }
 
-.input-area{
+/* Input area layout for task entry */
+.input-area {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
-.input-area input{
+/* Make the input field take available width */
+.input-area input {
     flex: 1;
 }
 
-.app-container{
+/* Main app container styling */
+.app-container {
     background-color: white;
     padding: 24px;
     border-radius: 16px;
     box-shadow: 0 2px 4px rgba(22, 171, 5, 0.1);
 }
 
+/* Heading spacing */
 h1 {
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-.add-button{
+/* Add button primary styling */
+.add-button {
     background-color: #6c63ff;
     color: white;
     font-weight: bold;
 }
 
+/* Hover states for task delete button */
 li button:hover {
     background-color: #ffcccc;
 }
 
+/* Hover state for the add button */
 .add-button:hover {
     background-color: #5a52e0;
 }
