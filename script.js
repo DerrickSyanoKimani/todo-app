@@ -6,13 +6,19 @@ const taskList = document.getElementById('taskList');
 // Tasks stored in memory and persisted to localStorage for persistence across reloads
 let tasks = [];
 
-function createTask(taskText) {
+function createTask(task) {
     // Create a task list item, with click-to-complete and delete controls
     const li = document.createElement('li');
-    li.textContent = taskText;
+    li.textContent = task.text;
+
+    if (task.completed) {
+    li.classList.add('completed');
+}
 
     li.addEventListener('click', function() {
+        task.completed = !task.completed;
         li.classList.toggle('completed');
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     });
 
     const deleteBtn = document.createElement('button');
@@ -20,8 +26,8 @@ function createTask(taskText) {
     deleteBtn.addEventListener('click', function(event) {
         event.stopPropagation();
 
-        tasks = tasks.filter(function(task){
-            return task !== taskText;
+        tasks = tasks.filter(function(savedTask){
+            return savedTask.text !== task.text;
         });
 
         localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -43,10 +49,18 @@ addBtn.addEventListener('click', function() {
         return;
     }
 
-    tasks.push(taskText);
+    tasks.push({
+        text: taskText,
+        completed: false
+    });
+
     localStorage.setItem('tasks', JSON.stringify(tasks));
     console.log(tasks);
-    createTask(taskText);
+
+    createTask({
+    text: taskText,
+    completed: false
+});
 
     // Reset the input for the next task
     taskInput.value = '';
