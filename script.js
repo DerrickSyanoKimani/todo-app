@@ -19,6 +19,12 @@ function createTask(taskText) {
     deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', function(event) {
         event.stopPropagation();
+
+        tasks = tasks.filter(function(task){
+            return task !== taskText;
+        });
+
+        localStorage.setItem('tasks', JSON.stringify(tasks));
         li.remove();
     });
 
