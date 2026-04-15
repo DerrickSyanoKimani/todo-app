@@ -1,14 +1,13 @@
-// DOM references
+// DOM elements used by the todo app
 const addBtn = document.getElementById('addBtn');
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
-
-
+// Tasks stored in memory and synced to localStorage
 let tasks = [];
 
 function createTask(taskText) {
-    // Build a new task list item with completion and delete behavior
+    // Create a task list item with click-to-complete and delete controls
     const li = document.createElement('li');
     li.textContent = taskText;
 
@@ -29,11 +28,11 @@ function createTask(taskText) {
 
 
 
-// Handle click events on the add button
+// Add a new task when the add button is clicked
 addBtn.addEventListener('click', function() {
     const taskText = taskInput.value.trim();
 
-    // Ignore empty tasks
+    // Do nothing if the input is empty or only whitespace
     if (taskText === '') {
         return;
     }
@@ -43,17 +42,19 @@ addBtn.addEventListener('click', function() {
     console.log(tasks);
     createTask(taskText);
 
-    // Reset the input field after adding a task
+    // Clear and focus the input for the next task
     taskInput.value = '';
     taskInput.focus();
 });
 
+// Allow submitting a new task by pressing Enter inside the input
 taskInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
         addBtn.click();
     }
 });
 
+// Load previously saved tasks from localStorage
 const savedTasks = localStorage.getItem('tasks');
 
 if (savedTasks) {
